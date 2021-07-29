@@ -17,10 +17,10 @@ public class TimeEntryController {
      this.timeEntryRepository=timeEntryRepository;
     }*/
    private TimeEntryRepository timeEntryRepository;
-    private JdbcTimeEntryRepository jdbctimeEntryRepository;
+
     @Autowired
-    public TimeEntryController(JdbcTimeEntryRepository jdbctimeEntryRepository) {
-        this.jdbctimeEntryRepository=jdbctimeEntryRepository;
+    public TimeEntryController(TimeEntryRepository timeEntryRepository) {
+        this.timeEntryRepository=timeEntryRepository;
     }
     @PostMapping(value="/time-entries")
     public ResponseEntity<TimeEntry> create(@RequestBody TimeEntry timeEntryToCreate) {
