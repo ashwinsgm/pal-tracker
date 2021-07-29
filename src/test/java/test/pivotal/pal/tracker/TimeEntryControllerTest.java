@@ -1,5 +1,6 @@
 package test.pivotal.pal.tracker;
 
+import io.pivotal.pal.tracker.JdbcTimeEntryRepository;
 import io.pivotal.pal.tracker.TimeEntry;
 import io.pivotal.pal.tracker.TimeEntryController;
 import io.pivotal.pal.tracker.TimeEntryRepository;
@@ -19,12 +20,14 @@ import static org.mockito.Mockito.*;
 
 public class TimeEntryControllerTest {
     private TimeEntryRepository timeEntryRepository;
+    private JdbcTimeEntryRepository jdbctimeEntryRepository;
     private TimeEntryController controller;
+
 
     @BeforeEach
     public void setUp() {
         timeEntryRepository = mock(TimeEntryRepository.class);
-        controller = new TimeEntryController(timeEntryRepository);
+        controller = new TimeEntryController(jdbctimeEntryRepository);
     }
 
     @Test

@@ -11,10 +11,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 public class TimeEntryController {
-    private TimeEntryRepository timeEntryRepository;
+   /* private TimeEntryRepository timeEntryRepository;
     @Autowired
     public TimeEntryController(@Qualifier("TimeEntryRepository") TimeEntryRepository timeEntryRepository) {
      this.timeEntryRepository=timeEntryRepository;
+    }*/
+   private TimeEntryRepository timeEntryRepository;
+    private JdbcTimeEntryRepository jdbctimeEntryRepository;
+    @Autowired
+    public TimeEntryController(JdbcTimeEntryRepository jdbctimeEntryRepository) {
+        this.jdbctimeEntryRepository=jdbctimeEntryRepository;
     }
     @PostMapping(value="/time-entries")
     public ResponseEntity<TimeEntry> create(@RequestBody TimeEntry timeEntryToCreate) {
