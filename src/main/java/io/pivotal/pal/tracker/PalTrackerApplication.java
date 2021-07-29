@@ -11,8 +11,7 @@ import javax.sql.DataSource;
 
 @SpringBootApplication
 public class PalTrackerApplication {
-    @Autowired
-    DataSource dataSource;
+
 
     public static void main(String[] args) {
         SpringApplication.run(PalTrackerApplication.class, args);
