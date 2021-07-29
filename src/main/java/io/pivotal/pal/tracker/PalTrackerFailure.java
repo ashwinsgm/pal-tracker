@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import static org.springframework.boot.availability.AvailabilityChangeEvent.publish;
 import static org.springframework.boot.availability.LivenessState.BROKEN;
 import static org.springframework.boot.availability.LivenessState.CORRECT;
-
+//
 @Component
 @Endpoint(id = "palTrackerFailure")
 public class PalTrackerFailure {
